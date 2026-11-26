@@ -42,7 +42,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;line-height:1.6;overflow-x:hidden;padding-bottom:96px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;line-height:1.6;overflow-x:hidden;padding-bottom:32px}
 a{color:inherit}
 button{font-family:inherit}
 button,[role="button"]{min-height:44px;min-width:44px}
@@ -281,7 +281,6 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
           <p class="lead rise" style="--d:.42s">Do khandaan, aik khushi. Ghar walon ki razamandi, buzurgon ki dua aur sab ki mohabbat ke saath <strong>Z aur M</strong> ki baat pakki tay pa gayi hai. Har safha apni baari par, mukammal tawajjo aur ehtiram ke saath pesh kiya jayega.</p>
           <div class="cta-row rise" style="--d:.52s">
             <button class="btn btn-primary" data-next>Z Aur M Se Mulaqat Kijiye <span class="arr">→</span></button>
-            <button class="btn btn-secondary" id="btnCelebrateTop">💍 &nbsp;Mubarakbaad Ki Janib Tashreef Laiye</button>
           </div>
           <div class="hero-meta rise" style="--d:.62s">
             <span class="pill">📅 Monday, 30 Nov 2026</span>
@@ -328,8 +327,7 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
       </article>
     </div>
     <div class="mubarak-bar rise" style="--d:.45s">
-      <div><strong id="mubarakCount">128 Mubarakbaad</strong><br><span style="color:var(--muted);font-size:14px">Doston aur ghar walon ki taraf se — aap bhi dein!</span></div>
-      <button class="btn btn-gold" id="btnMubarak">❤️ Mubarakbaad Pesh Kijiye</button>
+      <div><strong>128 Mubarakbaad</strong><br><span style="color:var(--muted);font-size:14px">Doston aur ghar walon ki taraf se pesh ki gayi mubarakbaad — dilon ki khushi ka izhaar.</span></div>
     </div>
     <div class="page-next-box rise" style="--d:.55s"><p>Mehfil-e-Noor Ki Sair<small>Agle safhe par bagh-e-noor ki pur-kaif duniya aap ki muntazir hai</small></p><button class="btn btn-primary" data-next>Mehfil-e-Noor Ki Sair Kijiye →</button></div>
   </section>
@@ -372,7 +370,7 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
   <section class="page" data-title="Mubarakbaad" data-label="Mubarakbaad" data-next-label="Mubarakbaad Mein Shamil Hon" id="celebrate">
     <div class="page-head">
       <h2 class="page-title rise" style="--d:.12s">Mubarakbaad Ka Jashn 🎉</h2>
-      <p class="page-sub rise" style="--d:.22s">Jashn ka aaghaz kijiye — angothiyan qareeb aayengi, phool bikhrenge aur mubarakbaad ka paighaam namudar hoga.</p>
+      <p class="page-sub rise" style="--d:.22s">Is safhe par tashreef late hi jashn khud-ba-khud aaghaz ho jata hai — angothiyan qareeb aati hain, phool bikharte hain aur mubarakbaad ka paighaam namudar hota hai.</p>
     </div>
     <div class="stage zoom" id="stage" style="--d:.25s;margin-top:18px">
       <div class="stage-visual" id="stageVisual">
@@ -383,11 +381,7 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
       </div>
       <div class="stage-msg">
         <h3 id="stageTitle">Angothiyan intezaar mein hain…</h3>
-        <p id="stageText">Jashn ka aaghaz kijiye aur is pur-musarrat lamhe ko apni aankhon se mulahiza farmaiye.</p>
-      </div>
-      <div class="cta-row" style="justify-content:center">
-        <button class="btn btn-primary" id="btnPlay">▶ &nbsp; Jashn Ka Aaghaz Kijiye</button>
-        <button class="btn btn-secondary" id="btnReset">↺ &nbsp; Manzar Dobara Tartib Dijiye</button>
+        <p id="stageText">Bas aik lamha — jashn ka pur-musarrat manzar aap ki aankhon ke samne namudar hone wala hai.</p>
       </div>
     </div>
     <div class="page-next-box rise" style="--d:.5s"><p>Tafseel-e-Mehfil<small>Agle safhe par tareekh, waqt aur baqi lamhat ki mukammal tafseel pesh hai</small></p><button class="btn btn-primary" data-next>Tafseel Mulahiza Farmaiye →</button></div>
@@ -439,22 +433,11 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
     <footer class="rise" style="--d:.45s">
       <div class="serif" style="font-size:28px;color:var(--ink)">Z &nbsp;♥&nbsp; M — Baat Pakki</div>
       <p style="margin:6px 0 0">Mohabbat, izzat aur duaon ke saath — ek nayi duniya ka aaghaz.</p>
-      <div style="margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-        <button class="btn btn-primary" id="btnRestart">↺ &nbsp; Khush Aamdeed Par Wapsi</button>
-        <button class="btn btn-secondary" data-goto="4">🎉 Mubarakbaad Dobara Mulahiza Farmaiye</button>
-      </div>
       <br><span class="sample-note">✦ SAMPLE DESIGN — Naam, date, venue aur photos aap ki pasand se change ho sakte hain ✦</span>
     </footer>
   </section>
 
 </main>
-
-<!-- Sticky pager -->
-<nav class="pager" aria-label="Safhaat ki rahnumai">
-  <button class="btn btn-secondary" id="btnPrev">← Pichla Safha</button>
-  <div class="pager-info"><b id="pagerTitle">Khush Aamdeed</b></div>
-  <button class="btn btn-primary btn-next" id="btnNext">Z Aur M Se Mulaqat Kijiye <span class="arr">→</span></button>
-</nav>
 
 <script>
 (function(){
@@ -477,12 +460,10 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
   var lights=document.getElementById('lights');
   if(lights){ for(var li=0; li<16; li++){ var dot=document.createElement('i'); dot.style.animationDelay=(li*0.18)+'s'; lights.appendChild(dot); } }
 
-  /* ===== PAGE NAVIGATION: one by one ===== */
+  /* ===== PAGE NAVIGATION: forward-only, one button per page ===== */
   var pages=Array.prototype.slice.call(document.querySelectorAll('.page'));
-  var current=0, lastDir=1;
-  var pagerTitle=document.getElementById('pagerTitle');
-  var btnPrev=document.getElementById('btnPrev');
-  var btnNext=document.getElementById('btnNext');
+  var current=0;
+  var visited={0:true};
 
   function render(){
     pages.forEach(function(pg, idx){
@@ -490,46 +471,23 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
       pg.classList.toggle('active', isActive);
       if(isActive){
         pg.classList.remove('enter-fwd','enter-back');
-        if(!reduce){ void pg.offsetWidth; pg.classList.add(lastDir>=0?'enter-fwd':'enter-back'); }
+        if(!reduce){ void pg.offsetWidth; pg.classList.add('enter-fwd'); }
       }
     });
-    var title=pages[current].getAttribute('data-title');
-    pagerTitle.textContent=title;
-    btnPrev.disabled = current===0;
-    btnPrev.innerHTML = current===0 ? '← Pichla Safha' : '← '+(pages[current-1].getAttribute('data-title')||'Pichla Safha');
-    btnNext.innerHTML = current===pages.length-1 ? '↺ Khush Aamdeed Par Wapsi' : (pages[current+1].getAttribute('data-next-label')||pages[current+1].getAttribute('data-title'))+' <span class="arr">→</span>';
+    // Celebration page auto-plays when it first appears — no extra button needed
+    if(current===4 && typeof playCelebration==='function'){
+      setTimeout(playCelebration, reduce?0:500);
+    }
   }
-  function goTo(idx){
-    if(idx<0) idx=0;
-    if(idx>=pages.length){ idx=0; lastDir=1; current=idx; render(); window.scrollTo({top:0,behavior:reduce?'auto':'smooth'}); return; }
-    lastDir = idx>=current ? 1 : -1;
-    current=idx; render();
+  function next(){
+    // Forward only: a page once left never comes back; no previous/back path exists
+    if(current>=pages.length-1) return;
+    current=current+1;
+    visited[current]=true;
+    render();
     window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
   }
-  function next(){ goTo(current+1); }
-  function prev(){ goTo(current-1); }
-  btnNext.addEventListener('click', next);
-  btnPrev.addEventListener('click', prev);
   document.querySelectorAll('[data-next]').forEach(function(el){ el.addEventListener('click', next); });
-  document.querySelectorAll('[data-goto]').forEach(function(el){
-    el.addEventListener('click', function(){ goTo(parseInt(el.getAttribute('data-goto'),10)); });
-  });
-  document.getElementById('btnRestart').addEventListener('click', function(){ goTo(0); });
-
-  // Keyboard arrows
-  document.addEventListener('keydown', function(e){
-    if(e.key==='ArrowRight') next();
-    if(e.key==='ArrowLeft') prev();
-  });
-  // Swipe on mobile
-  var tx=null, ty=null;
-  document.addEventListener('touchstart', function(e){ if(e.changedTouches[0]){ tx=e.changedTouches[0].clientX; ty=e.changedTouches[0].clientY; } }, {passive:true});
-  document.addEventListener('touchend', function(e){
-    if(tx===null||!e.changedTouches[0]) return;
-    var dx=e.changedTouches[0].clientX-tx, dy=e.changedTouches[0].clientY-ty;
-    if(Math.abs(dx)>70 && Math.abs(dx)>Math.abs(dy)*1.4){ if(dx<0) next(); else prev(); }
-    tx=null; ty=null;
-  }, {passive:true});
 
   render();
 
@@ -567,22 +525,14 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
   var text=document.getElementById('stageText');
   var visual=document.getElementById('stageVisual');
   function playCelebration(){
+    if(!stage) return;
     stage.classList.add('playing');
     title.textContent='Congratulations on Your Baat Pakki! 🎉';
     text.textContent='Z & M — Allah is jodi ko hamesha khush aur abad rakhe. Ameen.';
     burst(visual, 48);
     setTimeout(function(){ burst(visual, 24); }, 450);
   }
-  function resetStage(){
-    stage.classList.remove('playing');
-    title.textContent='Angothiyan intezaar mein hain…';
-    text.textContent='Jashn ka aaghaz kijiye aur is pur-musarrat lamhe ko apni aankhon se mulahiza farmaiye.';
-  }
-  document.getElementById('btnPlay').addEventListener('click', playCelebration);
-  document.getElementById('btnReset').addEventListener('click', resetStage);
 
-  /* ===== Mubarak counter ===== */
-  var mubarak=128; var mEl=document.getElementById('mubarakCount');
   function floatHearts(){
     if(reduce) return;
     var hearts=['❤️','💛','💚','🧡','🤍'];
@@ -594,14 +544,7 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
       (function(node){ setTimeout(function(){node.remove()},2400); })(hEl);
     }
   }
-  function incMubarak(){ mubarak++; mEl.textContent=mubarak+' Mubarakbaad'; burst(visual, 20); floatHearts(); }
-  document.getElementById('btnMubarak').addEventListener('click', incMubarak);
-  document.getElementById('btnCelebrateTop').addEventListener('click', function(){
-    goTo(4);
-    setTimeout(playCelebration, reduce?0:550);
-  });
-
-  /* ===== Ameen ===== */
+  /* ===== Ameen — the single button on the final page ===== */
   var ameen=0; var aEl=document.getElementById('ameenCount');
   document.getElementById('btnAmeen').addEventListener('click', function(){ ameen++; aEl.textContent=ameen; floatHearts(); });
 })();
