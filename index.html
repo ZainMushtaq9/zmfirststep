@@ -17,7 +17,7 @@
 <meta name="twitter:description" content="Baat Pakki ho gayi! Z & M ki khushi mein shamil hone ke liye click karo — mithaas, dua aur mubarakbaad, sab ready hai. 😂💍"/>
 <meta name="twitter:image" content="https://zmfirststep.netlify.app/assets/hero.webp"/>
 <link rel="icon" href="data:,"/>
-<title>Z &amp; M — Baat Pakki | Ek Ek Page, Full Animated</title>
+<title>Z &amp; M — Baat Pakki | Khush Aamdeed</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
@@ -113,6 +113,13 @@ img{max-width:100%;display:block}
 .pager-info span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--muted)}
 .btn-next .arr{animation:bounceArrow 1.2s ease-in-out infinite;display:inline-block}
 .btn:disabled{opacity:.45;cursor:not-allowed}
+@media(max-width:640px){
+  .pager{gap:8px;padding:8px}
+  .pager .btn{padding:10px 12px;font-size:13px;line-height:1.3;text-align:center}
+  .pager-info{min-width:58px}
+  .pager-info b{font-size:16px}
+  .page-next-box .btn{width:100%}
+}
 
 /* hero */
 .hero{position:relative;padding:10px 0 10px;overflow:hidden}
@@ -265,8 +272,8 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
 <div class="progress-wrap">
   <div class="wrap">
     <div class="progress-top">
-      <div class="progress-label">Page <b id="pageNum">1</b> / 7 &nbsp;•&nbsp; <span id="pageName">Welcome</span></div>
-      <div class="progress-hint">👆 Click karo — agla page khulega • Swipe bhi chalega</div>
+      <div class="progress-label">Safha <b id="pageNum">1</b> / 7 &nbsp;•&nbsp; <span id="pageName">Khush Aamdeed</span></div>
+      <div class="progress-hint">Har safha baari baari pesh kiya jata hai — aage badhne ke liye mutalliq button dabaiye</div>
     </div>
     <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
     <div class="steps" id="steps" role="tablist" aria-label="Pages"></div>
@@ -276,14 +283,14 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
 <main class="wrap pages" id="pages">
 
   <!-- PAGE 1 : WELCOME / HERO -->
-  <section class="page" data-title="Welcome" data-label="Welcome">
+  <section class="page" data-title="Khush Aamdeed" data-label="Khush Aamdeed" data-next-label="Khush Aamdeed">
     <header class="hero">
       <div class="lights" id="lights" aria-hidden="true"></div>
       <span class="lantern" style="top:20px;right:4%" aria-hidden="true">🪔</span>
       <span class="lantern" style="top:160px;left:1.5%;font-size:22px;animation-delay:1.4s" aria-hidden="true">🪔</span>
       <div class="hero-grid">
         <div>
-          <span class="badge rise" style="--d:.02s"><i></i> Page 1 • Shuruaat • Sample</span>
+          <span class="badge rise" style="--d:.02s"><i></i> Pehla Safha • Khush Aamdeed</span>
           <h1 class="rise" style="--d:.12s">Baat <em>Pakki</em><br>Ho Gayi!</h1>
           <p class="urdu-line rise" style="--d:.22s">Pehle sirf baat hui thi — ab woh baat, wada ban gayi hai.</p>
           <div class="names rise" style="--d:.32s" aria-label="Z and M">
@@ -291,10 +298,10 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
             <div class="amp">&amp;</div>
             <div class="name-box"><b>M</b><span>Dulhan • Bride</span></div>
           </div>
-          <p class="lead rise" style="--d:.42s">Do khandaan, aik khushi. Ghar walon ki razamandi, buzurgon ki dua aur sab ki mohabbat ke saath <strong>Z aur M</strong> ki baat pakki tay pa gayi hai. Ab har page aik click par khulega — sab aik saath nahi.</p>
+          <p class="lead rise" style="--d:.42s">Do khandaan, aik khushi. Ghar walon ki razamandi, buzurgon ki dua aur sab ki mohabbat ke saath <strong>Z aur M</strong> ki baat pakki tay pa gayi hai. Har safha apni baari par, mukammal tawajjo aur ehtiram ke saath pesh kiya jayega.</p>
           <div class="cta-row rise" style="--d:.52s">
-            <button class="btn btn-primary" data-next>🎉 &nbsp;Agla Page Kholo <span class="arr">→</span></button>
-            <button class="btn btn-secondary" id="btnCelebrateTop">💍 Celebration Par Jao</button>
+            <button class="btn btn-primary" data-next>Z Aur M Se Mulaqat Kijiye <span class="arr">→</span></button>
+            <button class="btn btn-secondary" id="btnCelebrateTop">💍 &nbsp;Mubarakbaad Ki Janib Tashreef Laiye</button>
           </div>
           <div class="hero-meta rise" style="--d:.62s">
             <span class="pill">📅 Monday, 30 Nov 2026</span>
@@ -318,9 +325,9 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
   </section>
 
   <!-- PAGE 2 : COUPLE -->
-  <section class="page" data-title="Couple" data-label="Couple">
+  <section class="page" data-title="Z Aur M" data-label="Z Aur M" data-next-label="Z Aur M Se Mulaqat Kijiye">
     <div class="page-head">
-      <span class="page-eyebrow rise" style="--d:.02s">Page 2 • The Couple</span>
+      <span class="page-eyebrow rise" style="--d:.02s">Dusra Safha • Z Aur M</span>
       <h2 class="page-title rise" style="--d:.12s">Do naam, aik manzil</h2>
       <p class="page-sub rise" style="--d:.22s">Ye sample design hai — naam, photo aur tafseel aap apni pasand se badal sakte hain. Filhal Z aur M is nayi duniya ke hero hain.</p>
     </div>
@@ -343,15 +350,15 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
     </div>
     <div class="mubarak-bar rise" style="--d:.45s">
       <div><strong id="mubarakCount">128 Mubarakbaad</strong><br><span style="color:var(--muted);font-size:14px">Doston aur ghar walon ki taraf se — aap bhi dein!</span></div>
-      <button class="btn btn-gold" id="btnMubarak">❤️ Mubarak Dein</button>
+      <button class="btn btn-gold" id="btnMubarak">❤️ Mubarakbaad Pesh Kijiye</button>
     </div>
-    <div class="page-next-box rise" style="--d:.55s"><p>Nayi Duniya dekhni hai?<small>Agla page — Mehfil-e-Noor ka bagh</small></p><button class="btn btn-primary" data-next>Agla Page →</button></div>
+    <div class="page-next-box rise" style="--d:.55s"><p>Mehfil-e-Noor Ki Sair<small>Agle safhe par bagh-e-noor ki pur-kaif duniya aap ki muntazir hai</small></p><button class="btn btn-primary" data-next>Mehfil-e-Noor Ki Sair Kijiye →</button></div>
   </section>
 
   <!-- PAGE 3 : NAYI DUNIYA -->
-  <section class="page" data-title="Nayi Duniya" data-label="Nayi Duniya">
+  <section class="page" data-title="Mehfil-e-Noor" data-label="Mehfil-e-Noor" data-next-label="Mehfil-e-Noor Ki Sair Kijiye">
     <div class="page-head">
-      <span class="page-eyebrow rise" style="--d:.02s">Page 3 • New Chapter</span>
+      <span class="page-eyebrow rise" style="--d:.02s">Teesra Safha • Mehfil-e-Noor</span>
       <h2 class="page-title rise" style="--d:.12s">Ek naya bagh, nayi duniya</h2>
       <p class="page-sub rise" style="--d:.22s">Theme hai <b>Mehfil-e-Noor</b> — Mughal bagh, latakhti laltainain, genda aur motia ke haar, aur sunehri shaam.</p>
     </div>
@@ -365,13 +372,13 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
         <div class="world-card rise" style="--d:.6s"><b>🏡</b><h3>Naya Safar</h3><p>Ab agla manzil Nikah ki tayyari — In Sha Allah, khair ke saath.</p></div>
       </div>
     </div>
-    <div class="page-next-box rise" style="--d:.65s"><p>Ab kahani suno<small>Baat se Baat Pakki tak ka safar</small></p><button class="btn btn-primary" data-next>Kahani Kholo →</button></div>
+    <div class="page-next-box rise" style="--d:.65s"><p>Dastan-e-Baat Pakki<small>Agle safhe par woh dilkash safar hai jo baat se baat pakki tak le gaya</small></p><button class="btn btn-primary" data-next>Dastan Mulahiza Farmaiye →</button></div>
   </section>
 
   <!-- PAGE 4 : KAHANI -->
-  <section class="page" data-title="Kahani" data-label="Kahani" id="kahani">
+  <section class="page" data-title="Dastan-e-Baat Pakki" data-label="Dastan" data-next-label="Dastan Mulahiza Farmaiye" id="kahani">
     <div class="page-head">
-      <span class="page-eyebrow rise" style="--d:.02s">Page 4 • Hamari Kahani</span>
+      <span class="page-eyebrow rise" style="--d:.02s">Chautha Safha • Dastan</span>
       <h2 class="page-title rise" style="--d:.12s">Baat se Baat Pakki tak</h2>
       <p class="page-sub rise" style="--d:.22s">Chhota sa safar, lekin har qadam yaadgar — aik aik karke khul raha hai.</p>
     </div>
@@ -381,15 +388,15 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
       <div class="t-item rise" style="--d:.45s"><div class="t-dot">🤲</div><div class="t-body"><small>Step 03</small><h3>Dua Aur Istikhara</h3><p>Dil mutma'in hue, buzurgon ne dua ki — aur jawab haan mein aaya.</p></div></div>
       <div class="t-item active rise" style="--d:.6s"><div class="t-dot">💍</div><div class="t-body"><small>Step 04 • Today</small><h3>Baat Pakki Ho Gayi — Alhamdulillah!</h3><p>Mithaas bandhi, angothi ki rasm hui aur sab ne mil kar khushi manayi. Yehi din is website ki jaan hai.</p></div></div>
     </div>
-    <div class="page-next-box rise" style="--d:.7s"><p>Ab celebration ka waqt hai<small>Angothiyan, confetti aur mubarakbaad</small></p><button class="btn btn-primary" data-next>Celebration Kholo →</button></div>
+    <div class="page-next-box rise" style="--d:.7s"><p>Mubarakbaad Ka Pur-Musarrat Lamha<small>Agle safhe par jashn, angothiyon ki rasm aur dilon ki khushi aap ki muntazir hai</small></p><button class="btn btn-primary" data-next>Mubarakbaad Mein Shamil Hon →</button></div>
   </section>
 
   <!-- PAGE 5 : CELEBRATION -->
-  <section class="page" data-title="Celebration" data-label="Celebration" id="celebrate">
+  <section class="page" data-title="Mubarakbaad" data-label="Mubarakbaad" data-next-label="Mubarakbaad Mein Shamil Hon" id="celebrate">
     <div class="page-head">
-      <span class="page-eyebrow rise" style="--d:.02s">Page 5 • Interactive</span>
-      <h2 class="page-title rise" style="--d:.12s">Celebration Stage 🎉</h2>
-      <p class="page-sub rise" style="--d:.22s">Play dabayein — angothiyan qareeb aayengi, confetti udega aur mubarak ka paighaam aayega.</p>
+      <span class="page-eyebrow rise" style="--d:.02s">Panchwan Safha • Mubarakbaad</span>
+      <h2 class="page-title rise" style="--d:.12s">Mubarakbaad Ka Jashn 🎉</h2>
+      <p class="page-sub rise" style="--d:.22s">Jashn ka aaghaz kijiye — angothiyan qareeb aayengi, phool bikhrenge aur mubarakbaad ka paighaam namudar hoga.</p>
     </div>
     <div class="stage zoom" id="stage" style="--d:.25s;margin-top:18px">
       <div class="stage-visual" id="stageVisual">
@@ -400,20 +407,20 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
       </div>
       <div class="stage-msg">
         <h3 id="stageTitle">Angothiyan intezaar mein hain…</h3>
-        <p id="stageText">Celebrate dabayein aur is sample khushi ko live dekhein.</p>
+        <p id="stageText">Jashn ka aaghaz kijiye aur is pur-musarrat lamhe ko apni aankhon se mulahiza farmaiye.</p>
       </div>
       <div class="cta-row" style="justify-content:center">
-        <button class="btn btn-primary" id="btnPlay">▶ &nbsp; Play Celebration</button>
-        <button class="btn btn-secondary" id="btnReset">↺ &nbsp; Dobara Set Karein</button>
+        <button class="btn btn-primary" id="btnPlay">▶ &nbsp; Jashn Ka Aaghaz Kijiye</button>
+        <button class="btn btn-secondary" id="btnReset">↺ &nbsp; Manzar Dobara Tartib Dijiye</button>
       </div>
     </div>
-    <div class="page-next-box rise" style="--d:.5s"><p>Function ki tafseel aur countdown<small>Monday, 30 Nov 2026 — kitna waqt baqi hai?</small></p><button class="btn btn-primary" data-next>Details Kholo →</button></div>
+    <div class="page-next-box rise" style="--d:.5s"><p>Tafseel-e-Mehfil<small>Agle safhe par tareekh, waqt aur baqi lamhat ki mukammal tafseel pesh hai</small></p><button class="btn btn-primary" data-next>Tafseel Mulahiza Farmaiye →</button></div>
   </section>
 
   <!-- PAGE 6 : DETAILS + COUNTDOWN -->
-  <section class="page" data-title="Details" data-label="Details" id="details">
+  <section class="page" data-title="Tafseel-e-Mehfil" data-label="Tafseel" data-next-label="Tafseel Mulahiza Farmaiye" id="details">
     <div class="page-head">
-      <span class="page-eyebrow rise" style="--d:.02s">Page 6 • Countdown Live</span>
+      <span class="page-eyebrow rise" style="--d:.02s">Chhata Safha • Tafseel-e-Mehfil</span>
       <h2 class="page-title rise" style="--d:.12s">Mehfil ki tafseel</h2>
       <p class="page-sub rise" style="--d:.22s">Sunday, 29 November ko baat pakki — function <b>Monday, 30 November 2026</b> ko hai.</p>
     </div>
@@ -439,13 +446,13 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
         </ul>
       </div>
     </div>
-    <div class="page-next-box rise" style="--d:.5s"><p>Aakhri page — Dua<small>Sab se khoobsurat page, dil se Ameen kahein</small></p><button class="btn btn-primary" data-next>Dua Wala Page →</button></div>
+    <div class="page-next-box rise" style="--d:.5s"><p>Meri Dua — Aakhri Safha<small>Sab se pur-asar safha, jahan har dil Z aur M ke liye dua-go hai</small></p><button class="btn btn-primary" data-next>Meri Dua Mein Shamil Hon →</button></div>
   </section>
 
   <!-- PAGE 7 : DUA + FINALE -->
-  <section class="page" data-title="Dua" data-label="Dua" id="dua">
+  <section class="page" data-title="Meri Dua" data-label="Meri Dua" data-next-label="Meri Dua Mein Shamil Hon" id="dua">
     <div class="page-head" style="text-align:center">
-      <span class="page-eyebrow rise" style="--d:.02s">Page 7 • Aakhri Page</span>
+      <span class="page-eyebrow rise" style="--d:.02s">Aakhri Safha • Meri Dua</span>
       <h2 class="page-title rise" style="--d:.12s">Duaon ke saath ikhtitam 🤲</h2>
       <p class="page-sub rise" style="--d:.22s;margin:0 auto">Aap aik aik page karke yahan tak pahunche — ab Z aur M ke liye dil se dua karein.</p>
     </div>
@@ -459,8 +466,8 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
       <div class="serif" style="font-size:28px;color:var(--ink)">Z &nbsp;♥&nbsp; M — Baat Pakki</div>
       <p style="margin:6px 0 0">Mohabbat, izzat aur duaon ke saath — ek nayi duniya ka aaghaz.</p>
       <div style="margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-        <button class="btn btn-primary" id="btnRestart">↺ &nbsp; Dobara Pehle Page Se Shuru Karein</button>
-        <button class="btn btn-secondary" data-goto="4">🎉 Celebration Dobara Dekhein</button>
+        <button class="btn btn-primary" id="btnRestart">↺ &nbsp; Khush Aamdeed Par Wapsi</button>
+        <button class="btn btn-secondary" data-goto="4">🎉 Mubarakbaad Dobara Mulahiza Farmaiye</button>
       </div>
       <br><span class="sample-note">✦ SAMPLE DESIGN — Naam, date, venue aur photos aap ki pasand se change ho sakte hain ✦</span>
     </footer>
@@ -468,13 +475,13 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
 
 </main>
 
-<p class="swipe-hint wrap" aria-hidden="true">← Swipe karo ya neeche Next dabao — aik waqt mein sirf aik page →</p>
+<p class="swipe-hint wrap" aria-hidden="true">Har safha baari baari pesh hota hai — aage badhne ke liye mutalliq button par click kijiye</p>
 
 <!-- Sticky pager -->
-<nav class="pager" aria-label="Page navigation">
-  <button class="btn btn-secondary" id="btnPrev">← Pichla</button>
-  <div class="pager-info"><b id="pagerTitle">Welcome</b><span id="pagerCount">Page 1 of 7</span></div>
-  <button class="btn btn-primary btn-next" id="btnNext">Agla Page <span class="arr">→</span></button>
+<nav class="pager" aria-label="Safhaat ki rahnumai">
+  <button class="btn btn-secondary" id="btnPrev">← Pichla Safha</button>
+  <div class="pager-info"><b id="pagerTitle">Khush Aamdeed</b><span id="pagerCount">Safha 1 / 7</span></div>
+  <button class="btn btn-primary btn-next" id="btnNext">Z Aur M Se Mulaqat Kijiye <span class="arr">→</span></button>
 </nav>
 
 <script>
@@ -538,9 +545,10 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
     pageNum.textContent=current+1;
     pageName.textContent=title;
     pagerTitle.textContent=title;
-    pagerCount.textContent='Page '+(current+1)+' of '+pages.length;
+    pagerCount.textContent='Safha '+(current+1)+' / '+pages.length;
     btnPrev.disabled = current===0;
-    btnNext.innerHTML = current===pages.length-1 ? '↺ Dobara Shuru' : 'Agla Page <span class="arr">→</span>';
+    btnPrev.innerHTML = current===0 ? '← Pichla Safha' : '← '+(pages[current-1].getAttribute('data-title')||'Pichla Safha');
+    btnNext.innerHTML = current===pages.length-1 ? '↺ Khush Aamdeed Par Wapsi' : (pages[current+1].getAttribute('data-next-label')||pages[current+1].getAttribute('data-title'))+' <span class="arr">→</span>';
   }
   function goTo(idx){
     if(idx<0) idx=0;
@@ -619,7 +627,7 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
   function resetStage(){
     stage.classList.remove('playing');
     title.textContent='Angothiyan intezaar mein hain…';
-    text.textContent='Celebrate dabayein aur is sample khushi ko live dekhein.';
+    text.textContent='Jashn ka aaghaz kijiye aur is pur-musarrat lamhe ko apni aankhon se mulahiza farmaiye.';
   }
   document.getElementById('btnPlay').addEventListener('click', playCelebration);
   document.getElementById('btnReset').addEventListener('click', resetStage);
