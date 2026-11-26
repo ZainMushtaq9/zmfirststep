@@ -153,6 +153,18 @@ img{max-width:100%;display:block}
 .marquee-track{display:flex;width:max-content;white-space:nowrap;animation:marqueeMove 24s linear infinite;font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600;color:var(--emerald)}
 .marquee-track span{padding:0 20px}
 
+/* countdown gate */
+.gate{padding:30px 0 16px;text-align:center}
+.gate-inner{max-width:640px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);padding:36px 26px 34px;position:relative;overflow:hidden}
+.gate-title{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,7vw,60px);line-height:.98;margin:16px 0 4px}
+.gate-title em{font-style:italic;color:var(--emerald)}
+.gate-count{margin:22px auto 6px;width:172px;height:172px;border-radius:50%;border:3px solid var(--gold);background:var(--gold-soft);display:flex;flex-direction:column;align-items:center;justify-content:center;animation:glowPulse 2.6s ease-in-out infinite}
+.gate-count b{font-family:"Cormorant Garamond",serif;font-size:62px;line-height:1;color:var(--emerald)}
+.gate-count span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--gold);margin-top:4px;padding:0 10px}
+.gate-text{color:var(--muted);max-width:48ch;margin:14px auto 0}
+.gate-pill{display:inline-block;margin-top:18px;background:var(--emerald);color:#FFF8DC;font-weight:800;font-size:14px;padding:10px 18px;border-radius:999px}
+@media(prefers-color-scheme:dark){.gate-pill{background:#E9C46A;color:#13251A}}
+
 /* petals */
 #petals{position:fixed;inset:0;pointer-events:none;z-index:5;overflow:hidden}
 .petal{position:absolute;top:-20px;width:14px;height:10px;background:#F6C453;border-radius:60% 0 60% 0;opacity:.85;animation:fall linear infinite}
@@ -251,7 +263,7 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
 @media(prefers-reduced-motion:reduce){
   .page.enter-fwd,.page.enter-back,.page.active .rise,.page.active .zoom,.page.active .from-left,.page.active .from-right{animation:none;opacity:1}
   .petal{display:none}
-  .lights i,.lantern,.couple-mid,.avatar,.ring-badge,.marquee-track,.stage.playing .rings,.cd b.pop,.btn-next .arr{animation:none}
+  .lights i,.lantern,.couple-mid,.avatar,.ring-badge,.marquee-track,.stage.playing .rings,.cd b.pop,.btn-next .arr,.gate-count{animation:none}
   .progress-fill{transition:none}
 }
 </style>
@@ -259,6 +271,18 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
 <body>
 <div id="petals" aria-hidden="true"></div>
 <div class="topstrip">✦ &nbsp; Alhamdulillah &nbsp; • &nbsp; Baat Pakki Ho Gayi &nbsp; ✦</div>
+
+<!-- COUNTDOWN GATE : website opens Sunday, 29 Nov 2026, 7:00 PM -->
+<div class="wrap gate" id="gate" hidden>
+  <div class="gate-inner zoom">
+    <div class="lights" id="gateLights" aria-hidden="true"></div>
+    <span class="badge" style="margin-top:14px"><i></i> Baat Pakki • Z &amp; M</span>
+    <h2 class="gate-title">Khushi Ke Lamhe<br><em>Qareeb Hain</em></h2>
+    <div class="gate-count"><b id="gateDays">–</b><span id="gateDaysLabel">Din Baqi</span></div>
+    <p class="gate-text">Z aur M ki baat pakki ki is pur-musarrat mehfil ka aaghaz <strong>Sunday, 29 November 2026</strong> ko <strong>shaam 7 baje</strong> hoga. Website usi lamhe sab ke liye khul jayegi — tab tak apni duaon mein yaad rakhiye ga.</p>
+    <div class="gate-pill">📅 Sunday, 29 November 2026 • Shaam 7:00 Baje</div>
+  </div>
+</div>
 
 <main class="wrap pages" id="pages">
 
@@ -395,13 +419,10 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
       <div class="card from-left" style="--d:.2s">
         <div class="kicker">Countdown • Live</div>
         <h3 class="serif" style="font-size:30px;margin:6px 0 0">Baat Pakki Function mein baqi waqt</h3>
-        <div class="countdown" role="timer" aria-label="Countdown">
-          <div class="cd"><b id="cdD">--</b><span>Din</span></div>
-          <div class="cd"><b id="cdH">--</b><span>Ghante</span></div>
-          <div class="cd"><b id="cdM">--</b><span>Minute</span></div>
-          <div class="cd"><b id="cdS">--</b><span>Second</span></div>
+        <div class="countdown" style="grid-template-columns:1fr" role="timer" aria-label="Countdown">
+          <div class="cd"><b id="cdD">--</b><span>Din Baqi</span></div>
         </div>
-        <p style="color:var(--muted);margin:12px 0 0;font-size:14px">Har second ke saath countdown live chal raha hai — ghante, minute aur second pop animation ke saath badalte hain.</p>
+        <p style="color:var(--muted);margin:12px 0 0;font-size:14px">Har guzarta din is khushi ko qareeb la raha hai — function tak baqi dinon ki tadaad yahan pesh hai.</p>
       </div>
       <div class="card from-right" style="--d:.2s">
         <div class="kicker">Function Details • Sample</div>
@@ -457,6 +478,38 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
   // Fairy lights
   var lights=document.getElementById('lights');
   if(lights){ for(var li=0; li<16; li++){ var dot=document.createElement('i'); dot.style.animationDelay=(li*0.18)+'s'; lights.appendChild(dot); } }
+  var gateLights=document.getElementById('gateLights');
+  if(gateLights){ for(var gi=0; gi<14; gi++){ var gdot=document.createElement('i'); gdot.style.animationDelay=(gi*0.18)+'s'; gateLights.appendChild(gdot); } }
+
+  /* ===== COUNTDOWN GATE: sirf din — website Sunday 29 Nov 2026, shaam 7 baje khulti hai ===== */
+  function daysUntil(date){
+    var now=new Date();
+    var a=Date.UTC(now.getFullYear(),now.getMonth(),now.getDate());
+    var b=Date.UTC(date.getFullYear(),date.getMonth(),date.getDate());
+    return Math.round((b-a)/86400000);
+  }
+  var openAt=new Date('2026-11-29T19:00:00');
+  var gate=document.getElementById('gate');
+  var mainEl=document.getElementById('pages');
+  function checkGate(){
+    if(new Date()>=openAt){
+      if(gate) gate.hidden=true;
+      if(mainEl) mainEl.style.display='';
+      return true;
+    }
+    if(gate) gate.hidden=false;
+    if(mainEl) mainEl.style.display='none';
+    var d=daysUntil(openAt);
+    var dEl=document.getElementById('gateDays');
+    var lEl=document.getElementById('gateDaysLabel');
+    if(dEl&&lEl){
+      if(d<=0){ dEl.textContent='Aaj'; dEl.style.fontSize='44px'; lEl.textContent='Shaam 7 Baje Khule Gi'; }
+      else { dEl.textContent=d; lEl.textContent='Din Baqi'; }
+    }
+    return false;
+  }
+  checkGate();
+  setInterval(checkGate, 30000);
 
   /* ===== PAGE NAVIGATION: forward-only, one button per page ===== */
   var pages=Array.prototype.slice.call(document.querySelectorAll('.page'));
@@ -489,20 +542,14 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
 
   render();
 
-  /* ===== Countdown ===== */
+  /* ===== Countdown: sirf din (function — Monday 30 Nov 2026) ===== */
   var target=new Date('2026-11-30T19:00:00');
-  function pad(n){return String(n).padStart(2,'0')}
   function tick(){
-    var diff=target-new Date(); if(diff<0) diff=0;
-    var d=Math.floor(diff/86400000), h=Math.floor(diff/3600000)%24, m=Math.floor(diff/60000)%60, s=Math.floor(diff/1000)%60;
     var dEl=document.getElementById('cdD'); if(!dEl) return;
-    dEl.textContent=d;
-    document.getElementById('cdH').textContent=pad(h);
-    document.getElementById('cdM').textContent=pad(m);
-    var sEl=document.getElementById('cdS'), sTxt=pad(s);
-    if(sEl.textContent!==sTxt){ sEl.textContent=sTxt; if(!reduce){ sEl.classList.remove('pop'); void sEl.offsetWidth; sEl.classList.add('pop'); } }
+    var d=daysUntil(target); if(d<0) d=0;
+    if(dEl.textContent!==String(d)){ dEl.textContent=d; if(!reduce){ dEl.classList.remove('pop'); void dEl.offsetWidth; dEl.classList.add('pop'); } }
   }
-  tick(); setInterval(tick,1000);
+  tick(); setInterval(tick,60000);
 
   /* ===== Celebration ===== */
   function burst(container, count){
