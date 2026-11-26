@@ -62,14 +62,6 @@ img{max-width:100%;display:block}
 .progress-hint{font-size:13px;color:var(--muted);font-weight:700}
 .progress-track{height:8px;background:var(--emerald-soft);border-radius:999px;overflow:hidden;margin-top:10px;border:1px solid var(--line)}
 .progress-fill{height:100%;width:14.28%;background:linear-gradient(90deg,var(--emerald),var(--gold));border-radius:999px;transition:width .6s cubic-bezier(.2,.9,.2,1)}
-.steps{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:12px}
-.step-dot{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:38px}
-.step-dot i{width:22px;height:22px;border-radius:50%;background:var(--bg2);display:grid;place-items:center;font-style:normal;font-size:11px}
-.step-dot.done{color:var(--emerald);border-color:var(--emerald)}
-.step-dot.done i{background:var(--emerald);color:#FFF8DC}
-.step-dot.current{background:var(--emerald);color:#FFF8DC;border-color:var(--emerald);transform:scale(1.04);box-shadow:0 8px 20px rgba(14,77,52,.25)}
-.step-dot.current i{background:#FFF8DC;color:var(--emerald)}
-@media(max-width:640px){.step-dot span{display:none}.step-dot.current span{display:inline}.step-dot{padding:7px 9px}}
 
 .pages{position:relative;min-height:62vh}
 .page{display:none}
@@ -268,7 +260,7 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
 <div id="petals" aria-hidden="true"></div>
 <div class="topstrip">✦ &nbsp; Alhamdulillah &nbsp; • &nbsp; Baat Pakki Ho Gayi &nbsp; ✦</div>
 
-<!-- Progress + Steps: one page at a time -->
+<!-- Progress: one page at a time -->
 <div class="progress-wrap">
   <div class="wrap">
     <div class="progress-top">
@@ -276,7 +268,6 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
       <div class="progress-hint">Har safha baari baari pesh kiya jata hai — aage badhne ke liye mutalliq button dabaiye</div>
     </div>
     <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
-    <div class="steps" id="steps" role="tablist" aria-label="Pages"></div>
   </div>
 </div>
 
@@ -507,17 +498,7 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
 
   /* ===== PAGE NAVIGATION: one by one ===== */
   var pages=Array.prototype.slice.call(document.querySelectorAll('.page'));
-  var stepsHost=document.getElementById('steps');
   var current=0, lastDir=1;
-  pages.forEach(function(pg, idx){
-    var b=document.createElement('button');
-    b.className='step-dot'; b.type='button';
-    b.setAttribute('role','tab');
-    b.innerHTML='<i>'+(idx+1)+'</i><span>'+pg.getAttribute('data-label')+'</span>';
-    b.addEventListener('click', function(){ goTo(idx); });
-    stepsHost.appendChild(b);
-  });
-  var stepDots=Array.prototype.slice.call(stepsHost.children);
   var fill=document.getElementById('progressFill');
   var pageNum=document.getElementById('pageNum');
   var pageName=document.getElementById('pageName');
@@ -534,11 +515,6 @@ footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:14px}
         pg.classList.remove('enter-fwd','enter-back');
         if(!reduce){ void pg.offsetWidth; pg.classList.add(lastDir>=0?'enter-fwd':'enter-back'); }
       }
-    });
-    stepDots.forEach(function(d, idx){
-      d.classList.toggle('current', idx===current);
-      d.classList.toggle('done', idx<current);
-      d.innerHTML = (idx<current ? '<i>✓</i>' : '<i>'+(idx+1)+'</i>') + '<span>'+pages[idx].getAttribute('data-label')+'</span>';
     });
     var title=pages[current].getAttribute('data-title');
     fill.style.width=((current+1)/pages.length*100)+'%';
